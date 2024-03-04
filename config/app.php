@@ -159,6 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Providers\RepositoryServiveProvider::class,
 
         /*
          * Application Service Providers...

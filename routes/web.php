@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ShortlinkController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -14,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('welcome');

@@ -4,15 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Shortlink;
 use Illuminate\Http\Request;
+use App\Repositories\Interfaces\ShortlinkRepositoryInterface;
 
 class ShortlinkController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+    public function __construct(protected ShortlinkRepositoryInterface $shortlinkRepository)
+    {
+        
+    }
+    
     public function index()
     {
-        return Shortlink::query()->select('id', 'code', 'link', 'user_id', 'created_at')->get();
+        return $this->shortlinkRepository->getAll();
     }
 
     /**
