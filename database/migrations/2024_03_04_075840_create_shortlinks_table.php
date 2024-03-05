@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('shortlinks', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('code')->unique();
             $table->string('link');
-            $table->foreignId('user_id');
+            $table->foreignUuid('user_id');
             $table->timestamps();
         });
     }
